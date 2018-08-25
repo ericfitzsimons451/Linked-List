@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 420px;
+  height: 200px;
 }
 
 .left-side {
@@ -13,7 +13,7 @@ body {
   background-color: #455a64;
   height: 100%;
   display: inline-block;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
 }
 
 .right-side {
@@ -21,7 +21,7 @@ body {
   height: 100%;
   background-color: #cfd8dc;
   display: inline-block;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   float: right;
 }
 
