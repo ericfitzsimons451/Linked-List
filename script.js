@@ -9,7 +9,7 @@ inputEnter.addEventListener('click', createWebsiteLink);
 function createWebsiteLink(event) {
   event.preventDefault();
   var newCard = document.createElement('article'); 
-  newCard.innerHTML = `<h2 id='input-website'>${inputWebsite.value}</h2>
+  newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2>
                         <p class="card-url-input">${inputUrl.value}</p>
                         <footer class="card-footer">
                         <p class="card-read-button">Read</p>
