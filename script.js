@@ -6,7 +6,7 @@ var cardReadButton = document.querySelector('.card-read-button');
 
 
 inputEnter.addEventListener('click', createWebsiteLink);
-cardReadButton.addEventListener('click', toggleCardRead);
+cardSection.addEventListener('click', toggleCardRead);
 
 
 function createWebsiteLink(event) {
@@ -20,9 +20,12 @@ function createWebsiteLink(event) {
   cardSection.prepend(newCard);
 };
 
-function toggleCardRead() {
-	cardReadButton.classList.toggle('read');
+function toggleCardRead(event) {
+  if (event.target.className === 'card-read-button' || event.target.className === 'card-read-button read' ) {
+    console.log('its happening!')
+    event.target.classList.toggle('read');
+  }
 }
 
-
+  // cardReadButton.classList.toggle('read');
 

@@ -32,9 +32,9 @@ body {
 }
 
 h1 {
-  display: inline;
+  display: inline-block;
   color: #fff;
-  font-size: 110px;
+  font-size: 6em;
   /*margin-left: 30%;*/
   /*width: 400px;*/
 }
