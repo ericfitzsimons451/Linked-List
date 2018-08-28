@@ -3,10 +3,12 @@ var inputUrl = document.querySelector('#input-url');
 var inputEnter = document.querySelector('#input-enter');
 var cardSection = document.querySelector('.right-side');
 var cardReadButton = document.querySelector('.card-read-button');
+var cardDeleteButton = document.querySelector('.card-delete-button');
 
 
 inputEnter.addEventListener('click', createWebsiteLink);
 cardSection.addEventListener('click', toggleCardRead);
+cardSection.addEventListener('click', deleteCard);
 
 
 function createWebsiteLink(event) {
@@ -22,10 +24,14 @@ function createWebsiteLink(event) {
 
 function toggleCardRead(event) {
   if (event.target.className === 'card-read-button' || event.target.className === 'card-read-button read' ) {
-    console.log('its happening!')
     event.target.classList.toggle('read');
   }
 }
 
-  // cardReadButton.classList.toggle('read');
+function deleteCard(event) {
+  if (event.target.className === 'card-delete-button');
+  event.target.parentNode.parentNode.remove('card-delete-button');
+  };
+
+
 
