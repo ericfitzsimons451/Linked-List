@@ -14,8 +14,8 @@ cardSection.addEventListener('click', deleteCard);
 function createWebsiteLink(event) {
   event.preventDefault();
   var newCard = document.createElement('article'); 
-  newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2>
-                        <p class="card-url-input">${inputUrl.value}</p>
+  newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2><hr>
+                        <p class="card-url-input">${inputUrl.value}</p><hr>
                         <footer class="card-footer">
                         <button class="card-read-button" type="button">Read</button>
                         <button class="card-delete-button" type="button">Delete</button></footer>`;
@@ -23,14 +23,15 @@ function createWebsiteLink(event) {
 };
 
 function toggleCardRead(event) {
-  if (event.target.className === 'card-read-button' || event.target.className === 'card-read-button read' ) {
+  if (event.target.className === 'card-read-button' || event.target.className === 'card-read-button read') {
     event.target.classList.toggle('read');
+    event.target.parentNode.parentNode.classList.toggle('card-read');
   }
 }
 
 function deleteCard(event) {
-  if (event.target.className === 'card-delete-button');
-  event.target.parentNode.parentNode.remove('card-delete-button');
+  if (event.target.className === 'card-delete-button') {
+  event.target.parentNode.parentNode.remove('card-delete-button') };
   };
 
 
