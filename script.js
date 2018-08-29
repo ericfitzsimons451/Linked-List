@@ -30,7 +30,7 @@ function toggleCardRead(event) {
     event.target.classList.toggle('read');
     event.target.parentNode.parentNode.classList.toggle('card-read');
   }
-}
+};
 
 function deleteCard(event) {
   if (event.target.className === 'card-delete-button') {
@@ -41,6 +41,6 @@ function checkInputs() {
   if (inputWebsite.value === '' || inputUrl.value === '') {
     alert('Yo! Finish your inputs!');
     cardSection.remove(newCard);
-  } 
-}
+  };
+};
 
