@@ -13,13 +13,16 @@ cardSection.addEventListener('click', deleteCard);
 
 function createWebsiteLink(event) {
   event.preventDefault();
+  checkInputs();
   var newCard = document.createElement('article'); 
   newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2><hr>
-                        <p class="card-url-input">${inputUrl.value}</p><hr>
-                        <footer class="card-footer">
+                        <a class="card-url-input" href=${inputUrl.value} target="_blank">${inputUrl.value}</a><hr>
+                        <div class="card-footer">
                         <button class="card-read-button" type="button">Read</button>
-                        <button class="card-delete-button" type="button">Delete</button></footer>`;
+                        <button class="card-delete-button" type="button">Delete</button></div>`;
   cardSection.prepend(newCard);
+  inputWebsite.value = '';
+  inputUrl.value = '';
 };
 
 function toggleCardRead(event) {
@@ -34,5 +37,10 @@ function deleteCard(event) {
   event.target.parentNode.parentNode.remove('card-delete-button') };
   };
 
-
+function checkInputs() {
+  if (inputWebsite.value === '' || inputUrl.value === '') {
+    alert('Yo! Finish your inputs!');
+    cardSection.remove(newCard);
+  } 
+}
 

@@ -6,23 +6,31 @@
 
 body {
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  /*height: 1000px;*/
 }
 
 .left-side {
-  width: 50%;
+  /*width: 50%;*/
+  padding-top: 20%;
   background-color: #455a64;
-  height: 100%;
-  display: inline-block;
+  grid-column: 1 / span 1;
+  /*height: 100%;*/
+  /*display: inline-block;*/
   /*border: 1px solid blue;*/
 }
 
 .right-side {
-  width: 50%;
-  height: 100%;
+  /*width: 50%;*/
+  /*height: 100%;*/
+  grid-column: 2 / span 1;
   background-color: #cfd8dc;
-  display: inline-block;
+  /*display: inline-block;*/
   /*border: 1px solid red;*/
-  float: right;
+  /*float: right;*/
+  overflow: scroll;
 }
 
 .page-logo-container {
@@ -34,14 +42,14 @@ body {
 h1 {
   display: inline-block;
   color: #fff;
-  font-size: 6em;
+  font-size: 4em;
   /*margin-left: 30%;*/
   /*width: 400px;*/
 }
 
 img {
   display: inline;
-  width: 15%;
+  width: 80px;
 }
 
 .website-input {
@@ -49,7 +57,7 @@ display: block;
 width: 75%;
 padding: 0% 5% 0% 5%;
 margin: 5% auto;
-font-family: 'Open Sans', sans-serif;
+/*font-family: 'Open Sans', sans-serif;*/
 font-size: 40px;
 }
 
@@ -57,7 +65,7 @@ font-size: 40px;
   background-color: #ffc107;
   color: #fff;
   margin-bottom: 20%;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   border: solid #ffc107;
 }
 
@@ -66,17 +74,20 @@ font-size: 40px;
   border: solid #ffd773;
 }
 
-.clear-fix {
+/*.clear-fix {
   clear: both;
-}
+}*/
 
 article {
   border: 1px solid #607d8b;
   width: 90%;
-  height: 20%;
-  margin: 5%;
-  padding: 1%;
+  height: 150px;
+  margin: 2% auto;
+  padding: 10px 32px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .card-website-title {
@@ -84,7 +95,7 @@ article {
   font-size: 25px;
   /*border-bottom: 1px solid #cfd8dc;*/
   color: #455a64;
-  padding: 2%;
+  /*padding: 15px 0;*/
   /*margin-left: 2%;*/
 }
 
@@ -94,7 +105,7 @@ article {
   /*border-bottom: 1px solid #cfd8dc;*/
   text-decoration: underline #cfd8dc;
   font-size: 20px;
-  padding: 15px;
+  /*padding: 15px 0;*/
   width: 95%;
   /*margin-left: 2%;*/
 }
@@ -105,8 +116,8 @@ article {
 
 hr {
   display: block;
-    margin-left: 2%;
-    margin-right: 2%;
+    /*margin-left: 2%;*/
+    /*margin-right: 2%;*/
     border-width: 1px;
     color: #cfd8dc;
 }
@@ -114,20 +125,30 @@ hr {
 .card-footer {
   display: flex;
   justify-content: space-between;
-  height: 7%;
+  height: 20px;
 }
 
 .card-read-button {
   color: #455a64;
   font-weight: 400;
   font-size: 15px;
-  /*padding: 2%;*/
+  padding: 0;
+  /*margin-top: 20px;*/
+  /*padding-top: 25px;*/
+  height: 30px;
+  text-decoration: underline #f2f4f4;
 }
 
 .card-delete-button {
   color: #455a64;
   font-weight: 400;
   font-size: 15px;
+  /*margin-top: 20px;*/
+  /*padding-top: 25px;*/
+  height: 30px;
+  text-decoration: underline #f2f4f4;
+  padding: 0;
+  background: none;
 }
 
 .card-read-button:hover {
@@ -141,7 +162,12 @@ hr {
 
 .read {
   color: red;
+  background: none;
 }
+
+/*.read:selected {
+  border:  none;
+}*/
 
 .card-read {
   background-color: #f2f4f4;
@@ -149,4 +175,19 @@ hr {
 
 button {
   border: transparent;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr; 
+  }
+  .left-side {
+    grid-row: 1 / span 2;
+    /*width: 100%;*/
+  }
+  .right-side {
+    grid-row: 1 / span 2;
+    /*width: 100%;*/
+  }
 }
