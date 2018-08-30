@@ -10,6 +10,9 @@ body {
   height: 100vh;
 }
 
+/*  Styling for elements denoted in HTML*/
+/*                                      */
+
 .left-side {
   background-color: #455a64;
   padding-top: 20%;
@@ -57,6 +60,9 @@ img {
   overflow: scroll;
 }
 
+/*  Styling for elements created in Javascript*/
+/*                                            */
+
 article {
   background-color: #fff;
   border: 2px solid #607d8b;
@@ -73,12 +79,14 @@ article {
   color: #455a64;
   font-weight: 800;
   font-size: 25px;
+  overflow-x: scroll;
 }
 
 .card-url-input {
   color: #607d8b;
   font-size: 20px;
   font-weight: 400;
+  overflow-x: scroll;
   text-decoration: underline #cfd8dc;
   width: 95%;
 }
@@ -108,19 +116,19 @@ hr {
   text-decoration: underline #f2f4f4;
 }
 
+.card-read-button:hover {
+  font-weight: 800;
+  text-decoration: underline #ffc107;
+}
+
 .card-delete-button {
+  background: none;
   color: #455a64;
   font-weight: 400;
   font-size: 15px;
   height: 30px;
   text-decoration: underline #f2f4f4;
   padding: 0;
-  background: none;
-}
-
-.card-read-button:hover {
-  font-weight: 800;
-  text-decoration: underline #ffc107;
 }
 
 .card-delete-button:hover {
@@ -140,6 +148,9 @@ button {
   border: transparent;
 }
 
+/* Media Query for Responsiveness */
+/*                                */
+
 @media (max-width: 700px) {
   body {
     grid-template-columns: 1fr;
@@ -151,8 +162,8 @@ button {
     padding-top: 0;
   }
   .left-side {
-    padding-top: 5%;
     height: 425px;
+    padding-top: 5%;
   }
 
   .right-side {
