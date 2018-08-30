@@ -5,15 +5,17 @@ var cardSection = document.querySelector('.right-side');
 var cardReadButton = document.querySelector('.card-read-button');
 var cardDeleteButton = document.querySelector('.card-delete-button');
 
-
+inputWebsite.addEventListener('keyup', checkInputs);
+inputUrl.addEventListener('keyup', checkInputs);
 inputEnter.addEventListener('click', createWebsiteLink);
 cardSection.addEventListener('click', toggleCardRead);
 cardSection.addEventListener('click', deleteCard);
 
+inputEnter.disabled = true;
 
 function createWebsiteLink(event) {
   event.preventDefault();
-  checkInputs();
+
   var newCard = document.createElement('article'); 
   newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2><hr>
                         <a class="card-url-input" href="https://${inputUrl.value}" target="_blank">${inputUrl.value}</a><hr>
@@ -23,6 +25,7 @@ function createWebsiteLink(event) {
   cardSection.prepend(newCard);
   inputWebsite.value = '';
   inputUrl.value = '';
+  inputEnter.disabled = true;
 };
 
 function toggleCardRead(event) {
@@ -38,9 +41,9 @@ function deleteCard(event) {
   };
 
 function checkInputs() {
-  if (inputWebsite.value === '' || inputUrl.value === '') {
+  if (inputWebsite.value !== '' && inputUrl.value !== '') {
     // alert('Yo! Finish your inputs!');
-    inputEnter.addAttribute("disabled");
+    inputEnter.disabled = false;
     // cardSection.remove(newCard);
   };
 };
