@@ -15,13 +15,16 @@ inputEnter.disabled = true;
 
 function createWebsiteLink(event) {
   event.preventDefault();
-
   var newCard = document.createElement('article'); 
-  newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2><hr>
-                        <a class="card-url-input" href="https://${inputUrl.value}" target="_blank">${inputUrl.value}</a><hr>
-                        <div class="card-footer">
-                        <button class="card-read-button" type="button">Read</button>
-                        <button class="card-delete-button" type="button">Delete</button></div>`;
+  newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}
+                       </h2><hr>
+                       <a class="card-url-input" href="https://${inputUrl.
+                       value}" target="_blank">${inputUrl.value}</a><hr>
+                       <div class="card-footer">
+                       <button class="card-read-button" type="button">Read
+                       </button>
+                       <button class="card-delete-button" type="button">
+                       Delete</button></div>`;
   cardSection.prepend(newCard);
   inputWebsite.value = '';
   inputUrl.value = '';
@@ -29,7 +32,8 @@ function createWebsiteLink(event) {
 };
 
 function toggleCardRead(event) {
-  if (event.target.className === 'card-read-button' || event.target.className === 'card-read-button read') {
+  if (event.target.className === 'card-read-button' || 
+    event.target.className === 'card-read-button read') {
     event.target.classList.toggle('read');
     event.target.parentNode.parentNode.classList.toggle('card-read');
   }
@@ -42,9 +46,7 @@ function deleteCard(event) {
 
 function checkInputs() {
   if (inputWebsite.value !== '' && inputUrl.value !== '') {
-    // alert('Yo! Finish your inputs!');
     inputEnter.disabled = false;
-    // cardSection.remove(newCard);
-  };
+  }
 };
 
