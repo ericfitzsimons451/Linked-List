@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-  color: #ffffff;
+  color: #fff;
   display: inline-block;
   font-size: 4em;
 }
@@ -59,7 +59,7 @@ img {
 
 article {
   background-color: #fff;
-  border: 1px solid #607d8b;
+  border: 2px solid #607d8b;
   display: flex;
   flex-direction: column;
   height: 150px;
@@ -144,13 +144,23 @@ button {
   body {
     grid-template-columns: 1fr;
   }
-
+  #input-enter {
+    margin-bottom: 0;
+  }
+  section .page-logo-container {
+    padding-top: 0;
+  }
   .left-side {
+    padding-top: 5%;
+    height: 425px;
   }
 
   .right-side {
     grid-column: 1;
-
+    height: 403px;
+  }
+  .right-side article {
+    margin-top: 25px;
   }
 }
 }

@@ -16,7 +16,7 @@ function createWebsiteLink(event) {
   checkInputs();
   var newCard = document.createElement('article'); 
   newCard.innerHTML = `<h2 class='card-website-title'>${inputWebsite.value}</h2><hr>
-                        <a class="card-url-input" href=${inputUrl.value} target="_blank">${inputUrl.value}</a><hr>
+                        <a class="card-url-input" href="https://${inputUrl.value}" target="_blank">${inputUrl.value}</a><hr>
                         <div class="card-footer">
                         <button class="card-read-button" type="button">Read</button>
                         <button class="card-delete-button" type="button">Delete</button></div>`;
@@ -39,8 +39,9 @@ function deleteCard(event) {
 
 function checkInputs() {
   if (inputWebsite.value === '' || inputUrl.value === '') {
-    alert('Yo! Finish your inputs!');
-    cardSection.remove(newCard);
+    // alert('Yo! Finish your inputs!');
+    inputEnter.addAttribute("disabled");
+    // cardSection.remove(newCard);
   };
 };
 
